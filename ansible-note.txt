@@ -1,0 +1,35 @@
+NOTE:
+
+create ansible structure, setup virtual environment
+set ansible.cfg for requirements, collections path
+install necessary collections for project
+
+-install python venv
+python -m pip install virtualenv
+-create venv folder
+python -m virtualenv venv
+-activate virtual environment
+source venv/bin/activate
+-deactivate if needed
+deactivate
+
+-install ansible while active on virtual environment
+(venv)$ pip install ansible
+! add =M.m.r for specific version e.g. ansible=2.4.0
+
+-set requirements field for pip install, easy setup
+pip install -r requirements.txt
+
+-on ansible.cfg :
+collections_path=collections/ansible_collections
+collections_scan_sys_path=False
+
+-show all current installed collections
+ansible-galaxy collection list
+! add collection name at end to confirm, e.g. cisco.ios
+
+-install collection 
+ansible-galaxy collection install cisco.ios
+
+-install via requirements yaml for ansible collections
+ansible-galaxy collection install -r collections/requirements.yaml
